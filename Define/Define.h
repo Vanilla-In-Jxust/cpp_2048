@@ -2,7 +2,8 @@
 
 using namespace std;
 
-const string BASE_PATH = "D:\\Projects\\2048\\img\\";
+// TODO: Edit Location!
+const string BASE_PATH = "D:\\Projects\\cpp_2048\\img\\";
 
 #define X1 25
 #define X2 258
