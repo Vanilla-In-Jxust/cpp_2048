@@ -8,11 +8,11 @@ void showDemo() {
     showBlocks(images);
 }
 
-vector<IMAGE> c_IMAGEs(const int IMAGEInts[16]) {
+vector<IMAGE> c_IMAGEs(const vector<int> &intsVector) {
     vector<IMAGE> IMAGEsVector;
 
     for (int i = 0; i < 16; i++) {
-        int IMAGEInt = IMAGEInts[i];
+        int IMAGEInt = intsVector[i];
         IMAGE image = getImage(IMAGEInt);
         IMAGEsVector.push_back(image);
     }

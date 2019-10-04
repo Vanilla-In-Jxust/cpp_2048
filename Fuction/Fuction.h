@@ -10,11 +10,11 @@ using namespace std;
 void showDemo();
 
 /**
- * convent int[16] to vector<IMAGE> length 16 with gamerule.
- * @param IMAGEInts is number in 2048 game.
+ * convent vector<int> to vector<IMAGE> length 16 with gamerule.
+ * @param intsVector is number vector in 2048 game.
  * @return vector<IMAGE> with length 16.
  */
-vector<IMAGE> c_IMAGEs(const int IMAGEInts[16]);
+vector<IMAGE> c_IMAGEs(const vector<int> &intsVector);
 
 /**
  * get IMAGE object by number with gamerule(2, 4, 8, etc).
