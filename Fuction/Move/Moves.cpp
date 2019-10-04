@@ -4,7 +4,7 @@
 
 using namespace std;
 
-vector<int> moveUp(const vector<int> &before) {
+vector<int> moveUp(vector<int> before) {
     vector<int> after = before;
 
     while (!checkUp(after)) {
@@ -16,13 +16,16 @@ vector<int> moveUp(const vector<int> &before) {
                 // up = down, down = up(0).
                 after[i + 4] = before[i];
                 after[i] = before[i + 4];
+                break;
             } else if (after[i] == after[i + 4]) {
                 // when up = down.
                 // up = 2 * down, down = 0.
                 after[i] = 2 * before[i + 4];
                 after[i + 4] = 0;
+                break;
             }
         }
+        before = after;
     }
 
     return after;

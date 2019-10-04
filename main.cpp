@@ -19,9 +19,6 @@ int main() {
     loadimage(&bg, bgPath.c_str());
     putimage(0, 0, &bg);
 
-    // show 2048 game demo arrangements.
-    // showBlocks(demoBlocks);
-
     // test
     showBlocks(testBlocks);
 

@@ -7,4 +7,4 @@ using namespace std;
  * @param before is vector before moving up.
  * @return after vector after moving up.
  */
-vector<int> moveUp(const vector<int> &before);
+vector<int> moveUp(vector<int> before);
