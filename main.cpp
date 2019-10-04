@@ -5,6 +5,10 @@
 #include "Define/Define.h"
 #include "Fuction/Fuction.h"
 
+// test
+#include "Define/BlockLocation.h"
+#include "Fuction/Move/Moves.h"
+
 int main() {
     // init screen with 959 x 959.
     initgraph(959, 959);
@@ -16,9 +20,21 @@ int main() {
     putimage(0, 0, &bg);
 
     // show 2048 game demo arrangements.
-    showDemo();
+    // showBlocks(demoBlocks);
+
+    // test
+    showBlocks(testBlocks);
 
     // press any key to exit.
+    _getch();
+
+    // test
+    cleardevice();
+    putimage(0, 0, &bg);
+
+    vector<int> moved = moveUp(testBlocks);
+    showBlocks(moved);
+
     _getch();
     closegraph();
 

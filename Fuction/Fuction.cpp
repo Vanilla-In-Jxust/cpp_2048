@@ -1,12 +1,6 @@
 #include "Fuction.h"
+#include "../Define/Define.h"
 #include "../Define/BlockLocation.h"
-
-#include <string>
-
-void showDemo() {
-    vector<IMAGE> images = c_IMAGEs(demoBlocks);
-    showBlocks(images);
-}
 
 vector<IMAGE> c_IMAGEs(const vector<int> &intsVector) {
     vector<IMAGE> IMAGEsVector;
@@ -28,7 +22,8 @@ IMAGE getImage(int w) {
     return imgw;
 }
 
-void showBlocks(const vector<IMAGE> &vectorIMAGEs) {
+void showBlocks(const vector<int> &vectorInts) {
+    vector<IMAGE> vectorIMAGEs = c_IMAGEs(vectorInts);
     for (int i = 0; i < 16; i++) {
         vector<int> location = Locations[i];
         IMAGE image = vectorIMAGEs[i];

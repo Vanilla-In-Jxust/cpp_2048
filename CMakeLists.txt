@@ -5,8 +5,14 @@ set(CMAKE_CXX_STANDARD 14)
 
 add_executable(2048 main.cpp
 
-        Define/BlockLocation.h
         Define/Define.h
+        Define/BlockLocation.h
 
+        Fuction/Fuction.h
         Fuction/Fuction.cpp
-        Fuction/Fuction.h)
+
+        Fuction/Move/Moves.h
+        Fuction/Move/Moves.cpp
+
+        Fuction/Check/Check.h
+        Fuction/Check/Check.cpp)

@@ -5,11 +5,6 @@
 using namespace std;
 
 /**
- * show Demo arrangement of 2048 game.
- */
-void showDemo();
-
-/**
  * convent vector<int> to vector<IMAGE> length 16 with gamerule.
  * @param intsVector is number vector in 2048 game.
  * @return vector<IMAGE> with length 16.
@@ -24,7 +19,7 @@ vector<IMAGE> c_IMAGEs(const vector<int> &intsVector);
 IMAGE getImage(int w);
 
 /**
- * draw blocks by vector<IMAGE> with length 16.
- * @param vectorIMAGEs is IMAGEs with length 16 to show.
+ * draw blocks by vector<int> with length 16.
+ * @param vectorInts is Ints with length 16 to show.
  */
-void showBlocks(const vector<IMAGE> &vectorIMAGEs);
+void showBlocks(const vector<int> &vectorInts);
