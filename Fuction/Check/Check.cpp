@@ -2,12 +2,12 @@
 
 using namespace std;
 
-bool checkUp(const vector<int> &after, const vector<bool> &movedFlags) {
+bool checkUp(const vector<int> &vec, const vector<bool> &movedFlags) {
     for (int i = 0; i < 12; i++) {
-        if (after[i] == 0 && after[i + 4] != 0) {
+        if (vec[i] == 0 && vec[i + 4] != 0) {
             return false;
-        } else if ((after[i] == after[i + 4])) {
-            if ((after[i] == 0 && after[i + 4] == 0) || movedFlags[i]) {
+        } else if ((vec[i] == vec[i + 4])) {
+            if ((vec[i] == 0 && vec[i + 4] == 0) || movedFlags[i]) {
                 continue;
             } else return false;
         }

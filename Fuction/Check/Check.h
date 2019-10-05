@@ -3,8 +3,9 @@
 using namespace std;
 
 /**
- * check every moved whether is the last time.
- * @param vector is to be tested.
- * @return true if done or false if need next move.
+* check every moved whether is the last time.
+* @param vec is to be tested.
+ * @param movedFlags used to remember special case.
+* @return true if done or false if need next move.
  */
-bool checkUp(const vector<int> &after, const vector<bool> &movedFlags);
+bool checkUp(const vector<int> &vec, const vector<bool> &movedFlags);
