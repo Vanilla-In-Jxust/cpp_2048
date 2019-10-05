@@ -7,4 +7,4 @@ using namespace std;
  * @param vector is to be tested.
  * @return true if done or false if need next move.
  */
-bool checkUp(const vector<int> &vector);
+bool checkUp(const vector<int> &after, const vector<bool> &movedFlags);

@@ -6,8 +6,12 @@ using namespace std;
 
 vector<int> moveUp(vector<int> before) {
     vector<int> after = before;
+    vector<bool> movedFlags = {false, false, false, false,
+                               false, false, false, false,
+                               false, false, false, false,
+                               false, false, false, false};
 
-    while (!checkUp(after)) {
+    while (!checkUp(after, movedFlags)) {
         for (int i = 0; i < 12; i++) {
             if (after[i] == 0 && after[i + 4] == 0) {
                 continue;
@@ -18,10 +22,16 @@ vector<int> moveUp(vector<int> before) {
                 after[i] = before[i + 4];
                 break;
             } else if (after[i] == after[i + 4]) {
+                if (movedFlags[i] == true) {
+                    continue;
+                }
+
                 // when up = down.
                 // up = 2 * down, down = 0.
                 after[i] = 2 * before[i + 4];
                 after[i + 4] = 0;
+
+                movedFlags[i] = true;
                 break;
             }
         }

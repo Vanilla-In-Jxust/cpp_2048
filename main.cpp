@@ -33,6 +33,15 @@ int main() {
     showBlocks(moved);
 
     _getch();
+
+    // test
+    cleardevice();
+    putimage(0, 0, &bg);
+
+    moved = moveUp(moved);
+    showBlocks(moved);
+
+    _getch();
     closegraph();
 
     return 0;
