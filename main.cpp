@@ -21,18 +21,39 @@ int main() {
     putimage(0, 0, &bg);
 
     showBlocks(testBlocks);
-    _getch();
 
-    // Clear screen.
-    cleardevice();
-    putimage(0, 0, &bg);
+    vector<int> current = testBlocks;
 
-    vector<int> moved = rotateRight(testBlocks);
-    showBlocks(moved);
+    while (true) {
+        int key = _getch();
 
-    // Press any key to exit.
-    _getch();
-    closegraph();
+        // When press esc key.
+        if (key == 27) {
+            closegraph();
+            return 0;
+        } else if (key == 224) {
+            int ctrl = _getch();
 
-    return 0;
+            switch (ctrl) { // NOLINT(hicpp-multiway-paths-covered)
+                case 72: {
+                    // Pressed Up
+                    current = moveUp(current);
+                    showBlocks(current);
+                }
+                case 80: {
+                    // Pressed Down
+/*                  current = rotateDown(current);
+                    current = moveUp(current);
+                    current = rotateDown(current);
+                    showBlocks(current);*/
+                }
+                case 75: {
+                    // Pressed Left
+                }
+                case 77: {
+                    // Pressed Right
+                }
+            }
+        }
+    }
 }

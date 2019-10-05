@@ -19,20 +19,24 @@ vector<int> moveUp(vector<int> before) {
                 // when has up and hasn't down.
                 // up = down, down = up(0).
                 after[i + 4] = before[i];
+                bool tempFlag = movedFlags[i + 4];
+                movedFlags[i + 4] = movedFlags[i];
                 after[i] = before[i + 4];
+                movedFlags[i] = tempFlag;
+
                 break;
             } else if (after[i] == after[i + 4]) {
-                if (movedFlags[i] == true) {
+                if (movedFlags[i] || movedFlags[i + 4]) {
                     continue;
+                } else {
+                    // when up = down.
+                    // up = 2 * down, down = 0.
+                    after[i] = 2 * before[i + 4];
+                    after[i + 4] = 0;
+
+                    movedFlags[i] = true;
+                    break;
                 }
-
-                // when up = down.
-                // up = 2 * down, down = 0.
-                after[i] = 2 * before[i + 4];
-                after[i + 4] = 0;
-
-                movedFlags[i] = true;
-                break;
             }
         }
         before = after;
