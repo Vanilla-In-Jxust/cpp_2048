@@ -38,8 +38,8 @@ int main() {
                 case 72: {
                     // Pressed Up
                     current = moveUp(current);
-                    showBlocks(current);
 
+                    showBlocks(current);
                     break;
                 }
                 case 80: {
@@ -47,18 +47,26 @@ int main() {
                     current = rotateDown(current);
                     current = moveUp(current);
                     current = rotateDown(current);
-                    showBlocks(current);
 
+                    showBlocks(current);
                     break;
                 }
                 case 75: {
                     // Pressed Left
+                    current = rotateRight(current);
+                    current = moveUp(current);
+                    current = rotateLeft(current);
 
+                    showBlocks(current);
                     break;
                 }
                 case 77: {
                     // Pressed Right
+                    current = rotateLeft(current);
+                    current = moveUp(current);
+                    current = rotateRight(current);
 
+                    showBlocks(current);
                     break;
                 }
             }
