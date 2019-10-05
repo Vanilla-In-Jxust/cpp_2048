@@ -8,6 +8,7 @@
 // test
 #include "Define/BlockLocation.h"
 #include "Fuction/Move/Moves.h"
+#include "Fuction/Rotate/Rotate.h"
 
 int main() {
     // init screen with 959 x 959.
@@ -19,28 +20,17 @@ int main() {
     loadimage(&bg, bgPath.c_str());
     putimage(0, 0, &bg);
 
-    // test
     showBlocks(testBlocks);
-
-    // press any key to exit.
     _getch();
 
-    // test
+    // Clear screen.
     cleardevice();
     putimage(0, 0, &bg);
 
-    vector<int> moved = moveUp(testBlocks);
+    vector<int> moved = rotateRight(testBlocks);
     showBlocks(moved);
 
-    _getch();
-
-    // test
-    cleardevice();
-    putimage(0, 0, &bg);
-
-    moved = moveUp(moved);
-    showBlocks(moved);
-
+    // Press any key to exit.
     _getch();
     closegraph();
 
