@@ -15,3 +15,15 @@ bool checkUp(const vector<int> &vec, const vector<bool> &movedFlags) {
 
     return true;
 }
+
+vector<int> checkEmpty(vector<int> check) {
+    vector<int> result = {};
+
+    for (int i = 0; i < 16; i++) {
+        if (check[i] == 0) {
+            result.push_back(i);
+        }
+    }
+
+    return result;
+}

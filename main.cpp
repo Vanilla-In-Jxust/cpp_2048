@@ -9,6 +9,8 @@
 #include "Define/BlockLocation.h"
 #include "Fuction/Move/Moves.h"
 #include "Fuction/Rotate/Rotate.h"
+#include "Fuction/Check/Check.h"
+#include "Fuction/Random/Random.h"
 
 int main() {
     // init screen with 959 x 959.
@@ -20,16 +22,19 @@ int main() {
     loadimage(&bg, bgPath.c_str());
     putimage(0, 0, &bg);
 
-    showBlocks(testBlocks);
+    vector<int> init = initBlocks();
+    showBlocks(init);
 
-    vector<int> current = testBlocks;
+    vector<int> current = init;
 
     while (true) {
         int key = _getch();
 
-        // When press esc key.
+        // When press esc key, clean screen and exit.
         if (key == 27) {
+            cleardevice();
             closegraph();
+
             return 0;
         } else if (key == 224) {
             int ctrl = _getch();
@@ -39,6 +44,7 @@ int main() {
                     // Pressed Up
                     current = moveUp(current);
 
+                    current = randomAdd(current);
                     showBlocks(current);
                     break;
                 }
@@ -48,6 +54,7 @@ int main() {
                     current = moveUp(current);
                     current = rotateDown(current);
 
+                    current = randomAdd(current);
                     showBlocks(current);
                     break;
                 }
@@ -57,6 +64,7 @@ int main() {
                     current = moveUp(current);
                     current = rotateLeft(current);
 
+                    current = randomAdd(current);
                     showBlocks(current);
                     break;
                 }
@@ -66,6 +74,7 @@ int main() {
                     current = moveUp(current);
                     current = rotateRight(current);
 
+                    current = randomAdd(current);
                     showBlocks(current);
                     break;
                 }

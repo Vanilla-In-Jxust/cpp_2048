@@ -18,4 +18,7 @@ add_executable(2048 main.cpp
         Fuction/Check/Check.cpp
 
         Fuction/Rotate/Rotate.h
-        Fuction/Rotate/Rotate.cpp)
+        Fuction/Rotate/Rotate.cpp
+
+        Fuction/Random/Random.cpp
+        Fuction/Random/Random.h)
