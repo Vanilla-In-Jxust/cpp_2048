@@ -6,10 +6,6 @@
 
 using namespace std;
 
-// Suppress warning because seed is time.
-#pragma clang diagnostic push
-#pragma ide diagnostic ignored "cert-msc51-cpp"
-
 vector<int> randomAdd(const vector<int> &before) {
     vector<int> emptyLocation = checkEmpty(before);
     vector<int> after = before;
@@ -22,7 +18,16 @@ vector<int> randomAdd(const vector<int> &before) {
     int rd = random(length - 1);
     int location = emptyLocation[rd];
 
-    after[location] = 2;
+    int which = random(1);
+    // 0: 2
+    // 1: 4
+
+    if (which == 0) {
+        after[location] = 2;
+    } else if (which == 1) {
+        after[location] = 4;
+    }
+
     return after;
 }
 
@@ -34,7 +39,7 @@ int random(int max) {
     time_t now = time(nullptr);
 
     uniform_int_distribution<int> uniform(0, max);
-    default_random_engine engine(now); // NOLINT(cert-msc32-c)
+    default_random_engine engine(now);
 
     int random = uniform(engine);
 
@@ -49,10 +54,25 @@ vector<int> initBlocks() {
         init.push_back(0);
     }
 
-    int rd = random(15);
-    init[rd] = 2;
+    int i = 0;
+    int j = 0;
+
+    while (i == j) {
+        i = random(15);
+        j = random(15);
+    }
+
+    int type = random(1);
+    // type 0: 2, 2.
+    // type 1: 2., 4.
+
+    if (type == 0) {
+        init[i] = 2;
+        init[j] = 2;
+    } else if (type == 1) {
+        init[i] = 2;
+        init[j] = 4;
+    }
 
     return init;
 }
-
-#pragma clang diagnostic pop

@@ -26,6 +26,7 @@ int main() {
     showBlocks(init);
 
     vector<int> current = init;
+    vector<int> before = current;
 
     while (true) {
         int key = _getch();
@@ -41,38 +42,58 @@ int main() {
 
             switch (ctrl) { // NOLINT(hicpp-multiway-paths-covered)
                 case 72: {
+                    before = current;
+
                     // Pressed Up
                     current = moveUp(current);
+
+                    if (current == before)
+                        break;
 
                     current = randomAdd(current);
                     showBlocks(current);
                     break;
                 }
                 case 80: {
+                    before = current;
+
                     // Pressed Down
                     current = rotateDown(current);
                     current = moveUp(current);
                     current = rotateDown(current);
+
+                    if (current == before)
+                        break;
 
                     current = randomAdd(current);
                     showBlocks(current);
                     break;
                 }
                 case 75: {
+                    before = current;
+
                     // Pressed Left
                     current = rotateRight(current);
                     current = moveUp(current);
                     current = rotateLeft(current);
+
+                    if (current == before)
+                        break;
 
                     current = randomAdd(current);
                     showBlocks(current);
                     break;
                 }
                 case 77: {
+                    before = current;
+
                     // Pressed Right
                     current = rotateLeft(current);
                     current = moveUp(current);
                     current = rotateRight(current);
+
+                    if (current == before)
+                        break;
 
                     current = randomAdd(current);
                     showBlocks(current);
