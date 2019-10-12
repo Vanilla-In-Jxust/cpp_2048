@@ -91,6 +91,8 @@ int main() {
         }
 
         if (isDead(current)) {
+            MessageBoxA(window, "Game Over !", "", MB_OK);
+
             cleardevice();
             closegraph();
 
