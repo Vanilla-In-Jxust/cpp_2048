@@ -2,6 +2,11 @@
 
 #include <vector>
 
+#include "Check/Check.h"
+#include "Move/Moves.h"
+#include "Random/Random.h"
+#include "Rotate/Rotate.h"
+
 using namespace std;
 
 /**

@@ -5,13 +5,6 @@
 #include "Define/Define.h"
 #include "Fuction/Fuction.h"
 
-// test
-#include "Define/BlockLocation.h"
-#include "Fuction/Move/Moves.h"
-#include "Fuction/Rotate/Rotate.h"
-#include "Fuction/Check/Check.h"
-#include "Fuction/Random/Random.h"
-
 int main() {
     // init screen with 959 x 959.
     initgraph(959, 959);
