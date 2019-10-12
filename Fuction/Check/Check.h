@@ -16,3 +16,5 @@ bool checkUp(const vector<int> &vec, const vector<bool> &movedFlags);
  * @return empty(0) location in vector<int>.
  */
 vector<int> checkEmpty(vector<int> check);
+
+bool isDead(const vector<int> &check);

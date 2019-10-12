@@ -1,13 +1,14 @@
 #include <easyx.h>
 
 #include <conio.h>
+#include <WinUser.h>
 
 #include "Define/Define.h"
 #include "Fuction/Fuction.h"
 
 int main() {
     // init screen with 959 x 959.
-    initgraph(959, 959);
+    HWND window = initgraph(959, 959);
 
     // load & put bg IMAGE with bgPath.
     string bgPath = BASE_PATH + "bg.png";
@@ -87,6 +88,13 @@ int main() {
                     break;
                 }
             }
+        }
+
+        if (isDead(current)) {
+            cleardevice();
+            closegraph();
+
+            return 0;
         }
     }
 }

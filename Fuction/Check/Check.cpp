@@ -1,5 +1,7 @@
 #include <vector>
 
+#include "../Move/Moves.h"
+
 using namespace std;
 
 bool checkUp(const vector<int> &vec, const vector<bool> &movedFlags) {
@@ -26,4 +28,20 @@ vector<int> checkEmpty(vector<int> check) {
     }
 
     return result;
+}
+
+bool isDead(const vector<int> &check) {
+    bool flag = false;
+
+    vector<int> up, down, left, right;
+    up = moveUp(check);
+    down = moveDown(check);
+    left = moveLeft(check);
+    right = moveRight(check);
+
+    if (check == up && check == down && check == left && check == right) {
+        flag = true;
+    }
+
+    return flag;
 }
