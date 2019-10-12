@@ -1,6 +1,7 @@
 #include <vector>
 
 #include "../Check/Check.h"
+#include "../Rotate/Rotate.h"
 
 using namespace std;
 
@@ -43,4 +44,34 @@ vector<int> moveUp(vector<int> before) {
     }
 
     return after;
+}
+
+vector<int> moveDown(const vector<int> &before) {
+    vector<int> current;
+
+    current = rotateDown(before);
+    current = moveUp(current);
+    current = rotateDown(current);
+
+    return current;
+}
+
+vector<int> moveLeft(const vector<int> &before) {
+    vector<int> current;
+
+    current = rotateRight(before);
+    current = moveUp(current);
+    current = rotateLeft(current);
+
+    return current;
+}
+
+vector<int> moveRight(const vector<int> &before) {
+    vector<int> current;
+
+    current = rotateLeft(before);
+    current = moveUp(current);
+    current = rotateRight(current);
+
+    return current;
 }

@@ -51,9 +51,7 @@ int main() {
                     before = current;
 
                     // Pressed Down
-                    current = rotateDown(current);
-                    current = moveUp(current);
-                    current = rotateDown(current);
+                    current = moveDown(current);
 
                     if (current == before)
                         break;
@@ -66,9 +64,7 @@ int main() {
                     before = current;
 
                     // Pressed Left
-                    current = rotateRight(current);
-                    current = moveUp(current);
-                    current = rotateLeft(current);
+                    current = moveLeft(current);
 
                     if (current == before)
                         break;
@@ -81,9 +77,7 @@ int main() {
                     before = current;
 
                     // Pressed Right
-                    current = rotateLeft(current);
-                    current = moveUp(current);
-                    current = rotateRight(current);
+                    current = moveRight(current);
 
                     if (current == before)
                         break;
