@@ -16,5 +16,8 @@ vector<int> randomAdd(const vector<int> &before);
  */
 int random(int max);
 
-
+/**
+ * When started game, generate new random blocks to play.
+ * @return
+ */
 vector<int> initBlocks();

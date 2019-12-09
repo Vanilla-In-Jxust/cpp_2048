@@ -17,4 +17,10 @@ bool checkUp(const vector<int> &vec, const vector<bool> &movedFlags);
  */
 vector<int> checkEmpty(vector<int> check);
 
+/**
+ * check all blocks whether can be continue moved.
+ * if not, means game over.
+ * @param check is all blocks ready to check.
+ * @return true if is, and false if no.
+ */
 bool isDead(const vector<int> &check);
